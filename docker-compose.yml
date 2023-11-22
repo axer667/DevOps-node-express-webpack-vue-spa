@@ -1,0 +1,14 @@
+version: '3.8'
+services: 
+  node-webpack-work:
+    restart: always 
+    build: 
+      context: .
+      dockerfile: ./images/Dockerfile
+    volumes: 
+      - /app/node_modules
+      - ./www:/app 
+    ports: 
+      - "3023:3000"
+      - "8082:8080"
+      - "3032:3030"
